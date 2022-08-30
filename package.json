@@ -1,0 +1,24 @@
+{
+  "name": "scc-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "scc-demo",
+  "author": "Emilien",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^4.21.1",
+    "gatsby-plugin-sass": "^5.21.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sass": "^1.54.6"
+  }
+}
