@@ -25,6 +25,31 @@ const dataArray = [
     image: client_image,
   },{
     type:"Steps",
+    stepsContent : [{
+      link: null,
+      img : "bolt",
+      paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
+      title : "Build your own cloud",
+      link:"/"
+  },{
+      link: null,
+      img : "cloud",
+      paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
+      title : "Protect your data",
+      link:"/"
+  },{
+      link: null,
+      img : "lock",
+      paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
+      title : "Host everything",
+      link:"/"
+  },{
+      link: null,
+      img : "tool",
+      paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
+      title : "Fast & reliable",
+      link:"/"
+  }]
   },{
     type:"Media",
     title:"Manage your tasks in the same place",
