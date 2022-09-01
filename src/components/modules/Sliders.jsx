@@ -9,21 +9,78 @@ import { useState, useEffect } from "react"
 const Sliders = ({data}) => {
 
     const [count, setCount] = useState(0)
-    
+    let slideArray;
+    let halfWindow;
+    const date = new Date();
+
+    const [lastCallNext, setLastCallNext] = useState(0)
+    const [lastCallPrev, setLastCallPrev] = useState(0)
+    useEffect(()=>{
+        slideArray = document.getElementsByClassName("slide");
+        halfWindow = window.innerWidth/2;
+    })
     
     const next = () => {
-        if(count > -data.content.length+4) setCount(count - 1)
+        let found = false;
+        let i = -1;
+        let center = -1
+        const now = date.getTime()
+        console.log( now - lastCallNext )
+        
+        if(now - lastCallNext > 550){
+            console.log( now - lastCallNext )
+
+            while(!found){
+                i++
+                if(slideArray[i]){
+                    const element = slideArray[i]
+                    center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
+                    if(center > halfWindow){
+                        found = true
+                    }
+                }else{
+                    found = true
+                }
+            }
+            
+            if(center != -1){
+                setCount(count + halfWindow-center)
+            }
+        }
+        setLastCallNext(now)
     }
     
     const prev = () => {
-        if(count < 0 ) setCount(count + 1)
+        let found = false;
+        let i = slideArray.length;
+        let center = -1
+        const now = date.getTime()
+        if(now - lastCallPrev > 550){
+            while(!found){
+                i--
+                if(slideArray[i]){
+                    const element = slideArray[i]
+                    center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
+                    if(center < halfWindow){
+                        found = true
+                    }
+                }else{
+                    found = true
+                }
+            }
+
+            if(center != -1){
+                setCount(count + halfWindow-center)
+            }
+            setLastCallPrev(now)
+        }
     }
 
     return (
         <div className="slider">
             <div className="slides-container" 
             style={{
-                transform: `translate(${count * 234}px, -50%)`,
+                transform: `translate(${count}px, -50%)`,
                 transition: ".5s ease-out ",
 
              }}
