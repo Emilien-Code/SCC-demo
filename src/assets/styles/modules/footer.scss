@@ -1,0 +1,80 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+.footer {
+    display: flex;
+    border: 0ch;
+    border-top: solid 4px map-get($brands-primary, "black");
+    height: 50vh;
+    padding: 0 181px;
+
+    
+    &.inline{
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    &.column{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .top{
+            margin-top: 76px;
+        }
+    }
+
+    .column{
+        width: 216px;
+        margin-right: 16px;
+        @include mq("tablet", max){
+            width:100px;
+        }
+    }
+    p{
+        font-size: 16px;
+        margin-top: 8px;
+        @include mq("tablet", max){
+            font-size: map-get($fonts-sizes-mobile, "p-primary");
+        }
+    }
+
+    img{
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+
+    }
+    .top    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .infos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .infos-container{
+            display: flex;
+
+        }
+    }
+    a{
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+            .topArrow{
+                animation: rollToTop 1600ms forwards infinite;
+            }
+        }
+        @include mq("tablet", max){
+            font-size: map-get($fonts-sizes-mobile, "p-primary");
+        }
+    }
+    img{
+        width: 12px;
+        height: 12px;
+    }
+
+}

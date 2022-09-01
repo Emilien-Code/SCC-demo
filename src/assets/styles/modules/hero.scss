@@ -1,0 +1,107 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+.hero   {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+    
+    
+    .hero-container{
+        display: flex;
+        width: 1200px;
+        
+
+
+        @include mq("desktop", max) {
+            width: 90%;
+        }
+        
+        @include mq("tablet-wide", max) {
+            flex-direction: column;
+        }
+
+        img{
+            @include mq("tablet-wide", max) {
+                width: 100%;
+            }        
+        }
+        .left   {
+            @include mq("tablet-wide", max) {
+                margin-bottom: 16px;
+            }    
+        }
+
+        &.reverse{
+            @include mq("tablet-wide", max) {
+                flex-direction: column-reverse;
+            }
+            .right{
+                @include mq("tablet-wide", max) {
+                    margin-bottom: 16px;
+                }    
+            }
+            .left{
+                margin: 0;
+            }
+        }
+    }
+
+    p{
+        margin-top: 16px;
+        @include mq("tablet", max){
+            font-size: map-get($fonts-sizes-mobile , "p-primary" );
+          }
+    }
+
+    .secondary{
+        font-size: map-get($fonts-sizes-desktop, p-secondary);
+        @include mq("tablet", max){
+            font-size: map-get($fonts-sizes-mobile , "p-secondary" );
+          }
+    }
+    .btn-link{
+        display: inline-block;
+        margin-top: 32px;
+        margin-right: 16px;
+    }
+    .right{
+        padding-left:  130px;
+        @include mq("desktop", max) {
+            padding-left:  60px;
+            width: 50%;
+        }
+        @include mq("tablet-wide", max) {
+            padding: 0;
+            width: 100%;
+        }
+        
+    }
+
+
+    .hero-container-no-img{
+        text-align: center;
+        width: 1200px;
+        
+
+
+        @include mq("desktop", max) {
+            width: 90%;
+        }
+        
+
+        .secondary{
+            margin-bottom: 95px;
+        }
+        
+        .btn-link{
+            width: 350px;
+        }
+    }
+
+
+}

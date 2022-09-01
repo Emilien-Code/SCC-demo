@@ -1,0 +1,19 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+.steps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+    @include mq("tablet", max) {
+        height: 100vh;
+    }
+    .step-container{
+        display: flex;
+        width: 90%;
+        @include mq("tablet", max) {
+            flex-direction: column;
+        }
+    }
+}

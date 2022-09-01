@@ -1,0 +1,31 @@
+$brands-primary:(
+    "black": #000000,
+    "purple": #9747FF,
+    "white": #FFFFFF
+);
+
+
+$fonts-sizes-desktop:(
+  "h1": 32px,
+  "h1-line": 42.2px,
+  "p-primary": 16px,
+  "p-primary-line": 21px,
+  "p-secondary": 12px,
+  "p-secondary-line": 16px,
+);
+
+
+
+$fonts-sizes-mobile:(
+  "h1": 26px,
+  "p-primary": 13px,
+  "p-secondary": 11px,
+);
+
+$breakpoints:(
+  "phone-small": 320px,
+  "tablet": 768px,
+  "tablet-wide": 1024px,
+  "desktop": 1440px,
+  "desktop-wide": 1920px,
+);

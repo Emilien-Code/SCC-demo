@@ -1,0 +1,19 @@
+@import "../utils/variables.scss";
+
+
+.scc-search-component{
+    padding: 12px 16px;
+    border: 1px solid map-get($brands-primary, "black");
+    border-radius: 2px;
+    display: flex;
+
+
+    input{
+        border: none;
+        margin-left: 16px;
+    }
+    img{
+        width: 24px;
+        height: 24px;
+    }
+}

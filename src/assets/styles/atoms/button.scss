@@ -1,0 +1,119 @@
+@import "../utils/variables.scss";
+.btn-link{
+    // padding: 21px 24px;
+    font-size: map-get($fonts-sizes-desktop, "p-primary" );
+    border: 1px solid map-get($brands-primary, "black");
+    box-shadow: 0px 2px 0px map-get($brands-primary, "black");
+    background-color:  map-get($brands-primary, "black");
+    border-radius: 8px;
+
+    span{
+        display: block;
+        border: 1px solid map-get($brands-primary, "black");
+        border-radius: 8px;
+        padding: 21px 24px;
+        background-color:  map-get($brands-primary, "white");
+        
+        transition: transform 0.15s ease-out,
+                    color 0.15s ease-out,
+                    background-color 0.15s ease-out;
+        
+
+    }
+    &.purple{
+        span{
+            background-color: map-get($brands-primary, "purple");
+            color: map-get($brands-primary, "white");
+        }
+    }
+    &:hover{
+        span{
+            background-color: map-get($brands-primary, "white" );
+            color: map-get($brands-primary, "black" );
+            transform: translate(-6px, -6px);
+            transition: transform 0.15s ease-out,
+                        color 0.15s ease-out,
+                        background-color 0.15s ease-out;
+        }
+    }
+}
+.arrow-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#ffffff00;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border: 1px solid map-get($brands-primary, "black");
+    transform-origin: center;
+    overflow: hidden;
+    .left{
+        transform: rotate(-90deg);
+    }
+    
+    .right{
+        transform: rotate(90deg);
+    }
+
+    &:hover{
+        .left{
+            @keyframes rollToLeft {
+                0% {
+                  transform: rotate(-90deg)translateY(0px);
+                }
+                25% {
+                  transform: rotate(-90deg)translateY(-12px);
+                }
+                50% {
+                  transform: rotate(-90deg)translateY(0px);
+                }
+                100% {
+                    transform: rotate(-90deg)translateY(0px);
+                }
+              }
+              animation: rollToLeft 1600ms forwards infinite;
+        }
+        .right{
+            @keyframes rollToRight {
+                0% {
+                    transform: rotate(90deg)translateY(0px);
+                }
+                25% {
+                    transform: rotate(90deg)translateY(-12px);
+                }
+                50% {
+                    transform: rotate(90deg)translateY(0px);
+                }
+                100% {
+                    transform: rotate(90deg)translateY(0px);
+                }
+              }
+              animation: rollToRight 1600ms forwards infinite;
+        }
+        .topArrow{
+            @keyframes rollToTop {
+                0% {
+                    transform: translateY(0px);
+                }
+                25% {
+                    transform: translateY(-12px);
+                }
+                50% {
+                    transform: translateY(0px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
+              }
+              animation: rollToTop 1600ms forwards infinite;
+        }
+    }
+
+    &.btt {
+        margin-left :8px;
+    }
+}
+

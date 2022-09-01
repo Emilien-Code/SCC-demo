@@ -1,0 +1,39 @@
+@import "../utils/init.scss";
+@import "../utils/mixins.scss";
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 128px;
+    border-bottom: solid 4px map-get($brands-primary , "black");
+    
+    
+    @include mq("tablet-wide", max){
+        p{
+            display: none;
+        }
+    }
+
+    @include mq("tablet",max){
+        .scc-search-component{
+            display: none;
+        }
+    }
+
+    div{
+        display: flex;
+        align-items: center;
+    }
+    a{
+        margin-left: 16px;
+        margin-right: 45px;
+    }
+    p{
+        margin-left: 20px;
+        font-size: 12px;
+    }
+    .logo{
+        margin-left: 64px;
+    }
+}

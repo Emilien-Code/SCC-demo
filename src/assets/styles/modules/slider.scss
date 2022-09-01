@@ -1,0 +1,52 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+.slider{
+    overflow: hidden;
+    height: 491px;
+    width: 100vw;
+    height: 50vh;
+
+    .slides-container{
+        position: relative;
+        display: flex;
+        left: 297px;
+        top: 50%;
+
+        @include mq("tablet", max) {
+            left: 10%;
+        }
+
+
+    }
+    
+    .btn-container{
+        position: relative;
+        width: 64px;
+        
+        .arrow-btn{
+            margin-right: 8px;
+        }
+        &.top-left{
+            left: calc(100% - 92px); //64px d'espace + la largeur 
+            bottom: 159px;
+        }
+        &.bottom-left{
+            left: calc(100% - 92px); //64px d'espace + la largeur 
+            bottom: -159px;
+        }
+        &.bottom-center{
+            left: 50%;
+            transform: translateX(50%);
+            bottom: -159px;
+        }
+        &.center-bottom{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            button{
+                margin:0 64px 
+            }
+        }
+    }
+}
