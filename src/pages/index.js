@@ -100,8 +100,7 @@ const dataArray = [
   {
     type: "footer",
     display: "inline"
-  }
-  ]
+  }]
 
 
 const IndexPage = () => {

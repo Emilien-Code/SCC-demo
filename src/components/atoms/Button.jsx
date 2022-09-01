@@ -18,21 +18,23 @@ const Button = ({type, arrowDirection, text, color, triggerParentFunction, link}
             if(link){
                 return(
                     <div className="arrow-btn btt">
-                        <img
-                            src={arrow}
-                            className="topArrow" 
-                            alt="arrow"
-                        />
+
+                        <svg className="topArrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 10.5L6 1.5" stroke="black" stroke-linecap="round"/>
+                            <path d="M9 4.5L6 1.5L3 4.5" stroke="black" stroke-linecap="round"/>
+                        </svg>
+
                     </div>
                 )
             }
             return(
                 <button className="arrow-btn" onClick={triggerParentFunction}>
-                    <img
-                        src={arrow}
-                        className={(arrowDirection === 'right' ? "right" : "") + (arrowDirection === 'left' ? "left" : "") + (arrowDirection === 'top' ? "top" : "")} 
-                        alt={arrowDirection + "arrow"}
-                    />
+
+                    <svg className={(arrowDirection === 'right' ? "right" : "") + (arrowDirection === 'left' ? "left" : "") + (arrowDirection === 'top' ? "top" : "")} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 10.5L6 1.5" stroke="black" stroke-linecap="round"/>
+                        <path d="M9 4.5L6 1.5L3 4.5" stroke="black" stroke-linecap="round"/>
+                    </svg>
+                    
                 </button>
             )
     }

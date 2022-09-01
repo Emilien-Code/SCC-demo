@@ -55,6 +55,10 @@
     border: 1px solid map-get($brands-primary, "black");
     transform-origin: center;
     overflow: hidden;
+
+    transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+
     .left{
         transform: rotate(-90deg);
     }
@@ -64,6 +68,15 @@
     }
 
     &:hover{
+        transition: 0.15s ease-out;
+        background-color: map-get($brands-primary, "black" );
+
+
+        svg path {
+            stroke :  map-get($brands-primary, "white" );
+            transition: 0.15s ease-out;
+        }
+        
         .left{
             @keyframes rollToLeft {
                 0% {
@@ -79,7 +92,7 @@
                     transform: rotate(-90deg)translateY(0px);
                 }
               }
-              animation: rollToLeft 1600ms forwards infinite;
+              animation: rollToLeft 1600ms forwards;
         }
         .right{
             @keyframes rollToRight {
@@ -96,7 +109,7 @@
                     transform: rotate(90deg)translateY(0px);
                 }
               }
-              animation: rollToRight 1600ms forwards infinite;
+              animation: rollToRight 1600ms forwards;
         }
         .topArrow{
             @keyframes rollToTop {
@@ -113,7 +126,7 @@
                     transform: translateY(0px);
                 }
               }
-              animation: rollToTop 1600ms forwards infinite;
+              animation: rollToTop 1600ms forwards;
         }
     }
 
