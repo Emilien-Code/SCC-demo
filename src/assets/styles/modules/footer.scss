@@ -9,9 +9,19 @@
     padding: 0 181px;
 
     
+    
     &.inline{
         justify-content: space-between;
         flex-direction: row;
+        @include mq("tablet-wide", max){
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .top{
+                margin-top: 76px;
+            }
+        }
     }
     &.column{
         flex-direction: column;
