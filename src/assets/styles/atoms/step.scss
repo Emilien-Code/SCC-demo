@@ -10,9 +10,19 @@
     }
     
     margin-right: 16px;
+    span{
+        display: inline-block;
+        transition: .15s ease-out;
+    }
     a{
         font-size: 12px;
         color: map-get($brands-primary, "purple");
+
+        &:hover{
+            span{
+                transform: translateX(6px)
+            }
+        }
     }
     p{
         margin: 8px 0 16px 0;
