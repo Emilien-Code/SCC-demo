@@ -28,7 +28,7 @@
         img{
             @include mq("tablet-wide", max) {
                 width: 100%;
-                margin-top: 12vw;
+                margin-top: 120px;
             }        
         }
         .left   {
@@ -37,13 +37,29 @@
             }    
         }
 
+        .right{
+            padding-left:  130px;
+            @include mq("desktop", max) {
+                padding-left:  60px;
+                width: 50%;
+            }
+            @include mq("tablet-wide", max) {
+                padding: 0;
+                width: 100%;
+            }
+            
+        }
+
         &.reverse{
+            flex-direction: row-reverse;
             @include mq("tablet-wide", max) {
                 flex-direction: column-reverse;
             }
             .right{
+                padding: 0 130px 0 0;
+
                 @include mq("tablet-wide", max) {
-                    margin-bottom: 16px;
+                    padding: 120px 60px 0 0;
                 }    
             }
             .left{
@@ -70,18 +86,7 @@
         margin-top: 32px;
         margin-right: 16px;
     }
-    .right{
-        padding-left:  130px;
-        @include mq("desktop", max) {
-            padding-left:  60px;
-            width: 50%;
-        }
-        @include mq("tablet-wide", max) {
-            padding: 0;
-            width: 100%;
-        }
-        
-    }
+
 
 
     .hero-container-no-img{

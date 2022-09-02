@@ -20,31 +20,28 @@ const dataArray = [
     primaryParagraph:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in sollicitudin quam, eu auctor elit. Integer id urna id tortor convallis semper sed sed odio. ", 
     secondaryParagraph:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus. Quisque luctus ex in sapien lacinia ullamcorper.", 
     display:"img-left",
+    alternativeText:"illustration",
     btn1:"Join Wait List",
     btn2:"Request a demo",
     image: client_image,
   },{
     type:"Steps",
     stepsContent : [{
-      link: null,
       img : "bolt",
       paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
       title : "Build your own cloud",
       link:"/"
   },{
-      link: null,
       img : "cloud",
       paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
       title : "Protect your data",
       link:"/"
   },{
-      link: null,
       img : "lock",
       paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
       title : "Host everything",
       link:"/"
   },{
-      link: null,
       img : "tool",
       paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
       title : "Fast & reliable",
@@ -60,8 +57,14 @@ const dataArray = [
     display: "arrows_split_center",
     content: [
       {
-        isTop : true,
+        alternativeText:"illustration",
         sliderImage,
+        title: "Build your own cloud",
+        p:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus."
+      },
+      {
+        sliderImage,
+        alternativeText:"illustration",
         title: "Build your own cloud",
         p:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus."
       },
@@ -72,26 +75,25 @@ const dataArray = [
       },
       {
         sliderImage,
+        alternativeText:"illustration",
         title: "Build your own cloud",
         p:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus."
       },
       {
         sliderImage,
+        alternativeText:"illustration",
         title: "Build your own cloud",
         p:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus."
       },
       {
         sliderImage,
+        alternativeText:"illustration",
         title: "Build your own cloud",
         p:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus."
       },
       {
         sliderImage,
-        title: "Build your own cloud",
-        p:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus."
-      },
-      {
-        sliderImage,
+        alternativeText:"illustration",
         title: "Build your own cloud",
         p:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus."
       },
