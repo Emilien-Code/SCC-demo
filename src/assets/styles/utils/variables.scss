@@ -4,6 +4,17 @@ $brands-primary:(
     "white": #FFFFFF
 );
 
+$height-section-desktop : (
+  "hero" : 60vh,
+  "media" : 100vh,
+  "small" : 40vh,
+);
+
+$height-section-mobile : (
+  "hero" : 80vh,
+  "media" : 80vh,
+  "step" : 100vh,
+);
 
 $fonts-sizes-desktop:(
   "h1": 32px,

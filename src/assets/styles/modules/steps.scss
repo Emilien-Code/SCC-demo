@@ -5,6 +5,12 @@
     justify-content: center;
     align-items: center;
     height: 50vh;
+    height: map-get($height-section-desktop , "small" );
+
+    @include mq("tablet", max){
+        height: map-get($height-section-mobile, "step" );
+    }
+
 
     @include mq("tablet", max) {
         height: 100vh;

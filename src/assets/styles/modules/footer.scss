@@ -3,10 +3,8 @@
 
 .footer {
     display: flex;
-    border: 0ch;
     border-top: solid 4px map-get($brands-primary, "black");
-    height: 50vh;
-    padding: 0 181px;
+    height: map-get($height-section-desktop , "small" );
 
     
     
@@ -23,12 +21,13 @@
             }
         }
     }
+
     &.column{
         flex-direction: column;
         align-items: center;
         justify-content: center;
         .top{
-            margin: 76px;
+            margin: 76px 0;
         }
         @include mq("tablet", max){
             .top{
@@ -39,18 +38,18 @@
 
     .column{
         width: 216px;
-        margin-right: 16px;
-        @include mq("tablet", max){
-            width:100px;
+        margin-bottom: 20px;
+        @include mq("tablet-wide", max){
+            width: 110px;
             margin-top: 20px;
         }
     }
     p{
         font-size: 16px;
         margin-top: 8px;
-        @include mq("tablet", max){
-            font-size: map-get($fonts-sizes-mobile, "p-primary");
-        }
+        // @include mq("tablet", max){
+        //     font-size: map-get($fonts-sizes-mobile, "p-primary");
+        // }
     }
 
     img{
@@ -65,19 +64,12 @@
         align-items: center;
     }
     .infos{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 90vw;
 
         .infos-container{
             display: flex;
-
-            @include mq("tablet", max){
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
     }
     a{
@@ -92,7 +84,7 @@
         }
         @include mq("tablet", max){
             font-size: map-get($fonts-sizes-mobile, "p-primary");
-            width: 80vw;
+            width: 50vw;
         }
     }
     img{

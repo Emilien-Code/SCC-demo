@@ -18,7 +18,7 @@ const workArray = [
     title:"Manage all your company's work at once",
     primaryParagraph:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in sollicitudin quam, eu auctor elit. Integer id urna id tortor convallis semper sed sed odio. ", 
     secondaryParagraph:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus. Quisque luctus ex in sapien lacinia ullamcorper.", 
-    display:"img-left",
+    display:"img-right",
     alternativeText:"illustration",
     btn1:"Join Wait List",
     btn2:"Request a demo",

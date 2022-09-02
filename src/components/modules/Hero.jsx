@@ -8,7 +8,9 @@ const Hero = ({data}) => {
         return (
             <div className="hero">
                 <div className={"hero-container " + (data.display ==="img-right" ?  "reverse" : "")}>
-                    <img src={data.image ? data.image : defaultImg} alt={data.alternativeText}/>
+                    <div className="img-container">
+                        <img src={data.image ? data.image : defaultImg} alt={data.alternativeText}/>
+                    </div>
                     <div className="right">
                         <h1>{data.title}</h1>
                         {data.display === 0 && data.primaryParagraph && (<p>{data.primaryParagraph}</p>)}

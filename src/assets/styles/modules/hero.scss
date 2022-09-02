@@ -2,12 +2,15 @@
 @import "../utils/mixins.scss";
 
 .hero   {
-    height: 100vh;
+    height: map-get($height-section-desktop, "hero" );
     display: flex;
     justify-content: center;
     align-items: center;
     
-    
+    @include mq("tablet-wide", max){
+        height: map-get($height-section-mobile, "hero" );
+
+    }
     
     
     
@@ -23,23 +26,26 @@
         
         @include mq("tablet-wide", max) {
             flex-direction: column;
+            text-align: center;
         }
+
 
         img{
             @include mq("tablet-wide", max) {
                 width: 100%;
-                margin-top: 120px;
             }        
         }
-    
-        img{
+        .img-container{
             width: 40vw;
-            max-height: 606px;
-            object-fit: cover;
             @include mq("tablet-wide", max) {
                 margin-bottom: 16px;
                 width: 100%;
             }    
+        }
+        img{
+            width: 100%;
+            max-width: 642px;
+            object-fit: cover;
         }
     
 
@@ -59,14 +65,17 @@
         &.reverse{
             flex-direction: row-reverse;
             @include mq("tablet-wide", max) {
-                flex-direction: column-reverse;
+                flex-direction: column;
             }
             .right{
                 padding: 0 130px 0 0;
 
                 @include mq("tablet-wide", max) {
-                    padding: 120px 60px 0 0;
+                    padding: 0 60px 0 0;
                 }    
+                @include mq("tablet", max) {
+                    padding: 0 0 0 0;
+                }   
             }
             .left{
                 margin: 0;

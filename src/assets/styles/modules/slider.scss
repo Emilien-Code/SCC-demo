@@ -5,7 +5,8 @@
     overflow: hidden;
     height: 491px;
     width: 100vw;
-    height: 50vh;
+    height: map-get($height-section-desktop , "small" );
+
 
     .slides-container{
         position: relative;
@@ -19,7 +20,7 @@
     .btn-container{
         position: relative;
         width: 64px;
-        
+
         .arrow-btn{
             margin-right: 8px;
         }
@@ -41,7 +42,11 @@
             justify-content: space-between;
             width: 100%;
             button{
-                margin:0 64px 
+                margin:0 64px;
+                
+                @include mq("phone-small", max) {
+                    margin:0 32px;
+                }
             }
         }
     }
