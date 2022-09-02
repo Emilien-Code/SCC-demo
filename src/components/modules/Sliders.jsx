@@ -4,77 +4,42 @@ import Slide from "../atoms/Slide"
 import Button from "../atoms/Button"
 import { useState, useEffect } from "react"
 
-
-
 const Sliders = ({data}) => {
 
     const [count, setCount] = useState(0)
     let slideArray;
     let halfWindow;
+    const step = 234;
 
-    useEffect(()=>{
-        slideArray = document.getElementsByClassName("slide");
-        halfWindow = window.innerWidth/2;
-    })
+    useEffect(()=>{ // une fois componentDidMount()
+        slideArray = document.getElementsByClassName("slides-container")[0];
+    }, [])
+
+//    useEffect(()=>{ // à chaque changement componentUpdate()    })
     
     const next = () => {
-        let found = false;
-        let i = -1;
-        let center = -1
-
-        while(!found){
-            i++
-            if(slideArray[i]){
-                const element = slideArray[i]
-                center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
-                if(center > halfWindow){
-                    found = true
-                }
-            }else{
-                found = true
-            }
+        if(count < data.content.length-1){
+            setCount(count + 1)
         }
-        
-        if(center != -1){
-            setCount(count + halfWindow-center)
-        }
-        
     }
     
     const prev = () => {
-        let found = false;
-        let i = slideArray.length;
-        let center = -1
-        while(!found){
-            i--
-            if(slideArray[i]){
-                const element = slideArray[i]
-                center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
-                if(center < halfWindow){
-                    found = true
-                }
-            }else{
-                found = true
-            }
+        if(count > 0 ){
+            setCount(count - 1)
         }
-
-        if(center != -1){
-            setCount(count + halfWindow-center)
-        }
-        
     }
 
 
 
     if(!data.content || data.content.length === 0){
-        return (<>Aucun slides renseignées</>)
+        return (<p>Aucun slides renseignées</p>)
     }
 
     return (
         <div className="slider">
             <div className="slides-container" 
             style={{
-                transform: `translate(${count}px, -50%)`,
+                transform: `translate(${-count * step}px, -50%)`,
                 transition: ".5s ease-out ",
 
              }}
