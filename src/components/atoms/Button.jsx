@@ -1,17 +1,12 @@
 import React from "react";
 
-import { useState, useEffect, useRef } from "react"
+import { useRef } from "react"
 import "../../assets/styles/atoms/button.scss";
-import arrow from  "../../assets/images/icons/arrow.svg";
+
 
 const Button = ({type, arrowDirection, text, color, triggerParentFunction, link}, props) => {
 
     const btn = useRef(null)
-
-
-    useEffect(()=>{
-
-    })
 
     const btnClicked = ()=>{
         if(!btn.current.disabled){
@@ -32,7 +27,7 @@ const Button = ({type, arrowDirection, text, color, triggerParentFunction, link}
     switch (type) {
         case 'link' :
             return (
-                <a href="/" className={"btn-link" + " " + color} {...props}>
+                <a href="/" className={"btn-link " + color} {...props}>
                     <span>
                         {text}
                     </span>
@@ -62,6 +57,8 @@ const Button = ({type, arrowDirection, text, color, triggerParentFunction, link}
                     
                 </button>
             )
+        default:
+            return  (<>Aucuns affichage pour le Btn</>)
     }
 }
 export default Button;

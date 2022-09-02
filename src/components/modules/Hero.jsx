@@ -3,7 +3,7 @@ import "../../assets/styles/modules/hero.scss";
 
 import Button from "../atoms/Button"
 const Hero = ({data}) => {
-    if(data.display===0){
+    if(data.display==="img-left"){
         return (
             <div className="hero">
                 <div className="hero-container">
@@ -22,7 +22,7 @@ const Hero = ({data}) => {
             </div>
         )
     }
-    if(data.display===1){
+    if(data.display==="img-right"){
         return (
             <div className="hero">
                 <div className="hero-container reverse">
@@ -41,7 +41,7 @@ const Hero = ({data}) => {
             </div>
         )
     }
-    if(data.display===2){
+    if(data.display==="no-img"){
         return (
             <div className="hero">
                 <div className="hero-container-no-img">
@@ -54,5 +54,8 @@ const Hero = ({data}) => {
             </div>
         )
     }
+    return(
+        <p>Aucuns affichage pour le hero</p>
+        )
 }
 export default Hero

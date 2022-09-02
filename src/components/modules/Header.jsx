@@ -5,7 +5,10 @@ import Button from "../atoms/Button"
 import logoHeader from "../../assets/images/Logoheader-logo.png"
 
 const Header = ({data}) => {
-    const display = data.display
+    let display = data.display
+    if(!data.display){
+        display = "search"
+    }
     return (
         <header>
             <div className="left">

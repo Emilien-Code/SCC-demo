@@ -1,12 +1,11 @@
 import React from "react"
 import "../../assets/styles/modules/footer.scss"
-import arrow from "../../assets/images/icons/arrow.svg"
 
 import Button from "../atoms/Button"
 
 const Footer = ({data}) => {
     return(
-        <div className={"footer " +  (data.display==="inline" ? "inline" : "") + (data.display==="column" ? "column" : "")}>
+        <div className={"footer " + (!data.display ? "inline" : "") + (data.display==="inline" ? "inline" : "") + (data.display==="column" ? "column" : "")}>
             <div className="infos">
                 <div className="infos-container">
                     <div className="column">

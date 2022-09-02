@@ -64,6 +64,12 @@ const Sliders = ({data}) => {
         
     }
 
+
+
+    if(!data.content || data.content.length === 0){
+        return (<>Aucun slides renseignées</>)
+    }
+
     return (
         <div className="slider">
             <div className="slides-container" 

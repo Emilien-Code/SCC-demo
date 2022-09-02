@@ -6,6 +6,12 @@ import "../../assets/styles/modules/steps.scss";
 
 
 const Steps = ({data}) => {
+    if(  !data.stepsContent || data.stepsContent.length === 0 
+        ){
+        return(
+            <>Aucunes étapes renseignées</>
+        )   
+    }
     return (
         <div className="steps">
             <div className="step-container">
