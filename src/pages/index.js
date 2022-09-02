@@ -99,7 +99,7 @@ const dataArray = [
   },
   {
     type: "footer",
-    display: "inline"
+    display: "column"
   }]
 
 
