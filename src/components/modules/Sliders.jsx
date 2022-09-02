@@ -11,10 +11,7 @@ const Sliders = ({data}) => {
     const [count, setCount] = useState(0)
     let slideArray;
     let halfWindow;
-    const date = new Date();
 
-    const [lastCallNext, setLastCallNext] = useState(0)
-    const [lastCallPrev, setLastCallPrev] = useState(0)
     useEffect(()=>{
         slideArray = document.getElementsByClassName("slide");
         halfWindow = window.innerWidth/2;
@@ -24,56 +21,47 @@ const Sliders = ({data}) => {
         let found = false;
         let i = -1;
         let center = -1
-        const now = date.getTime()
-        console.log( now - lastCallNext )
-        
-        if(now - lastCallNext > 550){
-            console.log( now - lastCallNext )
 
-            while(!found){
-                i++
-                if(slideArray[i]){
-                    const element = slideArray[i]
-                    center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
-                    if(center > halfWindow){
-                        found = true
-                    }
-                }else{
+        while(!found){
+            i++
+            if(slideArray[i]){
+                const element = slideArray[i]
+                center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
+                if(center > halfWindow){
                     found = true
                 }
-            }
-            
-            if(center != -1){
-                setCount(count + halfWindow-center)
+            }else{
+                found = true
             }
         }
-        setLastCallNext(now)
+        
+        if(center != -1){
+            setCount(count + halfWindow-center)
+        }
+        
     }
     
     const prev = () => {
         let found = false;
         let i = slideArray.length;
         let center = -1
-        const now = date.getTime()
-        if(now - lastCallPrev > 550){
-            while(!found){
-                i--
-                if(slideArray[i]){
-                    const element = slideArray[i]
-                    center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
-                    if(center < halfWindow){
-                        found = true
-                    }
-                }else{
+        while(!found){
+            i--
+            if(slideArray[i]){
+                const element = slideArray[i]
+                center = element.getBoundingClientRect().left + ( element.getBoundingClientRect().right -  element.getBoundingClientRect().left) /2
+                if(center < halfWindow){
                     found = true
                 }
+            }else{
+                found = true
             }
-
-            if(center != -1){
-                setCount(count + halfWindow-center)
-            }
-            setLastCallPrev(now)
         }
+
+        if(center != -1){
+            setCount(count + halfWindow-center)
+        }
+        
     }
 
     return (
