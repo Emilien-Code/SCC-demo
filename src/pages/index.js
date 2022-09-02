@@ -6,17 +6,16 @@ import SliceMachine from "../components/utils/SliceMachine"
 //Modules
 
 //Content
-import video from "../assets/images/client-videos/Video.png"
-import client_image from "../assets/images/client-images/Image.png";
-import sliderImage from "../assets/images/client-images/Sliders-img/Image.png"
-
-const dataArray = [
+const video = "https://source.unsplash.com/random/1144×606?buildings";
+const client_image = "https://source.unsplash.com/random/1144×606?buildings";
+const  sliderImage  = "https://source.unsplash.com/random/300×300?buildings"
+const workArray = [
   {
     type: "header",
     display: "search"
   },{
     type:"Hero",
-    title:"Manage all your company's data at once",
+    title:"Manage all your company's work at once",
     primaryParagraph:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in sollicitudin quam, eu auctor elit. Integer id urna id tortor convallis semper sed sed odio. ", 
     secondaryParagraph:"Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus. Quisque luctus ex in sapien lacinia ullamcorper.", 
     display:"img-left",
@@ -34,7 +33,7 @@ const dataArray = [
   },{
       img : "cloud",
       paragraph : "Nam sit amet pretium tortor. Praesent sagittis fermentum faucibus.",
-      title : "Protect your data",
+      title : "Protect your work",
       link:"/"
   },{
       img : "lock",
@@ -51,7 +50,7 @@ const dataArray = [
     type:"Media",
     title:"Manage your tasks in the same place",
     paragraph:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in sollicitudin quam, eu auctor elit. Integer id urna id tortor convallis semper sed sed odio. ",
-    video,
+    image : client_image,
   },{
     type:"Sliders",
     display: "arrows_split_center",
@@ -108,7 +107,7 @@ const dataArray = [
 const IndexPage = () => {
   return (
     <>
-      <SliceMachine Slices={dataArray}/>
+      <SliceMachine Slices={workArray}/>
     </>
   )
 }

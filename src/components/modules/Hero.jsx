@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/styles/modules/hero.scss";
+import defaultImg from "../../assets/images/client-images/Image2.png"
 
 import Button from "../atoms/Button"
 const Hero = ({data}) => {
@@ -7,9 +8,7 @@ const Hero = ({data}) => {
         return (
             <div className="hero">
                 <div className={"hero-container " + (data.display ==="img-right" ?  "reverse" : "")}>
-                    <div className="left">
-                        <img src={data.image} alt={data.alternativeText}/>
-                    </div>
+                    <img src={data.image ? data.image : defaultImg} alt={data.alternativeText}/>
                     <div className="right">
                         <h1>{data.title}</h1>
                         {data.display === 0 && data.primaryParagraph && (<p>{data.primaryParagraph}</p>)}

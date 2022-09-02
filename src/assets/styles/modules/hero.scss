@@ -31,11 +31,17 @@
                 margin-top: 120px;
             }        
         }
-        .left   {
+    
+        img{
+            width: 40vw;
+            max-height: 606px;
+            object-fit: cover;
             @include mq("tablet-wide", max) {
                 margin-bottom: 16px;
+                width: 100%;
             }    
         }
+    
 
         .right{
             padding-left:  130px;
