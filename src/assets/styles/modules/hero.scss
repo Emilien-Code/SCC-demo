@@ -30,11 +30,6 @@
         }
 
 
-        img{
-            @include mq("tablet-wide", max) {
-                width: 100%;
-            }        
-        }
         .img-container{
             width: 40vw;
             @include mq("tablet-wide", max) {
@@ -46,6 +41,10 @@
             width: 100%;
             max-width: 642px;
             object-fit: cover;
+            max-height: 500px;
+            @include mq("tablet-wide", max) {
+                width: 100%;
+            }        
         }
     
 

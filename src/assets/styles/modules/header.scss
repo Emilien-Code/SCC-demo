@@ -7,7 +7,7 @@ header{
     justify-content: space-between;
     height: 128px;
     border-bottom: solid 4px map-get($brands-primary , "black");
-    
+    margin-bottom: 150px;
     
     @include mq("tablet-wide", max){
         p{

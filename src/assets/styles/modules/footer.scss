@@ -6,7 +6,7 @@
     border-top: solid 4px map-get($brands-primary, "black");
     height: map-get($height-section-desktop , "small" );
 
-    
+    margin-top: 100px;
     
     &.inline{
         justify-content: space-between;
