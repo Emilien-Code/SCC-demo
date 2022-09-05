@@ -19,7 +19,7 @@ const Step = ({data}) => {
                 } 
                 alt={data.img}
             />
-            <p>{data.title}</p>
+            <p>{data.name}</p>
             <p className="secondary">{data.paragraph}</p>
             {data.link !== null && (<a href={data.link}>Let see <span>→</span></a>)}
         </div>

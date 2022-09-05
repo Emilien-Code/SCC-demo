@@ -1,5 +1,7 @@
 import * as React from "react"
 
+import { graphql } from "gatsby";
+
 // SliceMachine
 import SliceMachine from "../components/utils/SliceMachine"
 
@@ -8,7 +10,7 @@ import SliceMachine from "../components/utils/SliceMachine"
 //Content
 const video = "https://source.unsplash.com/random/1144×606?buildings";
 const client_image = "https://source.unsplash.com/random/1144×606?buildings";
-const  sliderImage  = "https://source.unsplash.com/random/300×300?buildings"
+const  sliderImage  = "https://source.unsplash.com/random/300×300?buildings";
 const workArray = [
   {
     type: "header",
@@ -101,17 +103,210 @@ const workArray = [
   {
     type: "footer",
     display: "column"
-  }]
+  }];
 
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
+
+  // let PROJECT_ID = "h3asrjaf";
+  // let DATASET = "production";
+  // let QUERY = encodeURIComponent('*[_type == "header"]');
+  // // Compose the URL for your project's endpoint and add the query
+  // let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+
+  const slices = [
+    data.sanityHeader,
+    data.sanityHero,
+    data.sanityMedia,
+    data.sanityFooter,
+    data.sanitySlider,
+    data.sanitySteps
+  ]
+
   return (
     <>
-      <SliceMachine Slices={workArray}/>
+      <SliceMachine 
+      Slices={slices}/>
+      {/* Slices={workArray}/> */}
     </>
   )
 }
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+
+
+export const query = graphql`
+query MyQuery {
+  sanityHeader {
+    display
+    internal {
+      type
+    }
+  }
+  
+  sanityHero {
+    internal {
+      type
+    }
+    display
+    title
+    secondaryParagraph
+    primaryParagraph
+    firstButton
+    seccondButton
+    image{
+      asset{
+        id
+        height
+        gatsbyImageData
+        gatsbyImage
+        filesize
+        filename
+        extension
+        description
+        assetId
+        _updatedAt
+        _type
+        _rev
+        _rawSource
+        _rawMetadata
+        _key
+        _id       id
+        height
+        gatsbyImageData
+        gatsbyImage
+        filesize
+        filename
+        extension
+        description
+        assetId
+        _updatedAt
+        _type
+        _rev
+        _rawSource
+        _rawMetadata
+        _key
+        _id
+      }
+    }
+  }
+
+
+
+  sanityMedia {
+    image{
+      asset{
+        id
+        height
+        gatsbyImageData
+        gatsbyImage
+        filesize
+        filename
+        extension
+        description
+        assetId
+        _updatedAt
+        _type
+        _rev
+        _rawSource
+        _rawMetadata
+        _key
+        _id       id
+        height
+        gatsbyImageData
+        gatsbyImage
+        filesize
+        filename
+        extension
+        description
+        assetId
+        _updatedAt
+        _type
+        _rev
+        _rawSource
+        _rawMetadata
+        _key
+        _id
+      }
+    }
+    title
+    primaryParagraph
+    internal {
+      type
+    }
+  }
+  
+
+
+  sanityFooter {
+    display
+    internal {
+      type
+    }
+  }
+
+
+  sanitySlider {
+    display
+    slides {
+      title
+      paragraph
+      image{
+        asset{
+          id
+          height
+          gatsbyImageData
+          gatsbyImage
+          filesize
+          filename
+          extension
+          description
+          assetId
+          _updatedAt
+          _type
+          _rev
+          _rawSource
+          _rawMetadata
+          _key
+          _id       id
+          height
+          gatsbyImageData
+          gatsbyImage
+          filesize
+          filename
+          extension
+          description
+          assetId
+          _updatedAt
+          _type
+          _rev
+          _rawSource
+          _rawMetadata
+          _key
+          _id
+        }
+      }
+    }
+    internal {
+      type
+    }
+  }
+  sanitySteps {
+    steps {
+      name
+      paragraph
+      link
+      img
+    }
+
+    internal {
+      type
+    }
+  }
+
+
+
+}`;
+
+

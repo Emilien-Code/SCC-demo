@@ -6,7 +6,8 @@ import "../../assets/styles/modules/steps.scss";
 
 
 const Steps = ({data}) => {
-    if(!data.stepsContent || data.stepsContent.length === 0){
+    console.log(data)
+    if(!data.steps || data.steps.length === 0){
         return(
             <>Aucunes étapes renseignées</>
         )   
@@ -15,7 +16,7 @@ const Steps = ({data}) => {
         <div className="steps">
             <div className="step-container">
                 {
-                    data.stepsContent.map((stepContent, index)=> {
+                    data.steps.map((stepContent, index)=> {
                         return(
                             <Step
                             key={index} 

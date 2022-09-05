@@ -8,7 +8,6 @@ const Sliders = ({data}) => {
 
     const [count, setCount] = useState(0)
     let slideArray;
-    let halfWindow;
     const step = 234;
 
     useEffect(()=>{ // une fois componentDidMount()
@@ -18,7 +17,7 @@ const Sliders = ({data}) => {
 //    useEffect(()=>{ // à chaque changement componentUpdate()    })
     
     const next = () => {
-        if(count < data.content.length-1){
+        if(count < data.slides.length-1){
             setCount(count + 1)
         }
     }
@@ -31,7 +30,7 @@ const Sliders = ({data}) => {
 
 
 
-    if(!data.content || data.content.length === 0){
+    if(!data.slides || data.slides.length === 0){
         return (<p>Aucun slides renseignées</p>)
     }
 
@@ -45,7 +44,7 @@ const Sliders = ({data}) => {
              }}
             >
                 {
-                    data.content.map((el,index)=>{
+                    data.slides.map((el,index)=>{
                         return (<Slide data={el} key={index}/>)
                     })
                 }
@@ -60,10 +59,8 @@ const Sliders = ({data}) => {
                     triggerParentFunction={prev} 
                     type="arrow"
                     arrowDirection="left"
-                    color="purple"
-                    text={data.btn1}
                 />
-                <Button type="arrow" triggerParentFunction={next} arrowDirection="right" text={data.btn2}/>
+                <Button type="arrow" triggerParentFunction={next} arrowDirection="right"/>
             </div>
         </div>
     )

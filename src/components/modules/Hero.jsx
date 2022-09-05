@@ -1,7 +1,7 @@
 import React from "react";
 import "../../assets/styles/modules/hero.scss";
 import defaultImg from "../../assets/images/client-images/Image2.png"
-
+import SanityImage from "gatsby-plugin-sanity-image"
 import Button from "../atoms/Button"
 const Hero = ({data}) => {
     if(data.display==="img-left" || data.display==="img-right" ){
@@ -9,14 +9,17 @@ const Hero = ({data}) => {
             <div className="hero">
                 <div className={"hero-container " + (data.display ==="img-right" ?  "reverse" : "")}>
                     <div className="img-container">
-                        <img src={data.image ? data.image : defaultImg} alt={data.alternativeText}/>
+                        {/* <img src={data.image ? `localhost:3333/data.image._rawAsset._ref` : defaultImg} alt={data.alternativeText}/> */}
+                        <SanityImage 
+                            {...data.image}
+                        />
                     </div>
                     <div className="right">
                         <h1>{data.title}</h1>
-                        {data.display === 0 && data.primaryParagraph && (<p>{data.primaryParagraph}</p>)}
+                        {data.primaryParagraph && (<p>{data.primaryParagraph}</p>)}
                         <p className="secondary">{data.secondaryParagraph}</p>
-                        <Button type="link" color="purple" text={data.btn1}/>
-                        <Button type="link" text={data.btn2}/>
+                        <Button type="link" color="purple" text={data.firstButton}/>
+                        <Button type="link" text={data.seccondButton}/>
                     </div>
                 </div>
             </div>
@@ -29,8 +32,8 @@ const Hero = ({data}) => {
                         <h1>{data.title}</h1>
                         <p>{data.primaryParagraph}</p>
                         <p className="secondary">{data.secondaryParagraph}</p>
-                        <Button type="link" color="purple" text={data.btn1}/>
-                        <Button type="link" text="data.btn2"/>
+                        <Button type="link" color="purple" text={data.firstButton}/>
+                        <Button type="link" text={data.seccondButton}/>
                 </div>
             </div>
         )
