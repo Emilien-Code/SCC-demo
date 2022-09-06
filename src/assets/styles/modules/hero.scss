@@ -31,7 +31,8 @@
 
 
         .img-container{
-            width: 40vw;
+            width: 50%;
+            margin-right: 60px;
             @include mq("tablet-wide", max) {
                 margin-bottom: 16px;
                 width: 100%;
@@ -39,9 +40,8 @@
         }
         img{
             width: 100%;
-            max-width: 642px;
             object-fit: cover;
-            max-height: 500px;
+            max-height: 400px;
             @include mq("tablet-wide", max) {
                 width: 100%;
             }        
@@ -49,7 +49,7 @@
     
 
         .right{
-            padding-left:  130px;
+            padding-left:  60px;
             @include mq("desktop", max) {
                 padding-left:  60px;
                 width: 50%;

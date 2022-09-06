@@ -3,8 +3,8 @@
 
 .slider{
     overflow: hidden;
-    height: 491px;
     width: 100vw;
+    margin-top: 100px;
     height: map-get($height-section-desktop , "small" );
 
 
@@ -27,16 +27,16 @@
         }
         &.top-left{
             left: calc(100% - 92px); //64px d'espace + la largeur 
-            bottom: 159px;
+            bottom: 200px;
         }
         &.bottom-left{
             left: calc(100% - 92px); //64px d'espace + la largeur 
-            bottom: -159px;
+            bottom: -120px;
         }
         &.bottom-center{
             left: 50%;
-            transform: translateX(50%);
-            bottom: -159px;
+            transform: translateX(-50%);
+            bottom: -120px;
         }
         &.center-bottom{
             justify-content: space-between;

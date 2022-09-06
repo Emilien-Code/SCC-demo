@@ -1,19 +1,20 @@
 $brands-primary:(
-    "black": #000000,
-    "purple": #9747FF,
-    "white": #FFFFFF
+  "black": #000000,
+  "purple": #9747FF,
+  "white": #FFFFFF
 );
 
 $height-section-desktop : (
   "hero" : 60vh,
   "media" : 100vh,
-  "small" : 40vh,
+  "small" : 50vh,
 );
 
 $height-section-mobile : (
   "hero" : 80vh,
   "media" : 80vh,
   "step" : 100vh,
+  "small" : 50vh
 );
 
 $fonts-sizes-desktop:(

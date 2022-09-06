@@ -7,15 +7,30 @@
     height: map-get($height-section-desktop , "small" );
 
     margin-top: 100px;
-    
+    .col    {
+        width   : 120px;
+    }
     &.inline{
         justify-content: space-between;
-        flex-direction: row;
+        .col{
+            margin-right: 100px;
+        }
+        a{
+            width: 200px;
+            margin-right: 100px;
+        }
+        .infos{
+            display: flex;
+            align-items: center;
+            margin-left: 100px;
+        }
         @include mq("tablet-wide", max){
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-
+            .infos{
+                display: block;
+                margin: 0;
+            }
             .top{
                 margin: 38px 0;
             }
@@ -24,26 +39,26 @@
 
     &.column{
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+
+        .infos-container{
+            justify-content: space-evenly;
+        }
+        .infos{
+            display: block;
+            margin: 0;
+        }
         .top{
-            margin: 76px 0;
+            margin: 78px 0;
         }
         @include mq("tablet", max){
             .top{
                 margin: 38px 0;
             }
+
         }
     }
 
-    .column{
-        width: 216px;
-        margin-bottom: 20px;
-        @include mq("tablet-wide", max){
-            width: 110px;
-            margin-top: 20px;
-        }
-    }
     p{
         font-size: 16px;
         margin-top: 8px;
@@ -64,12 +79,14 @@
         align-items: center;
     }
     .infos{
-        width: 90vw;
-
+        width: 100vw;
         .infos-container{
             display: flex;
-            justify-content: space-between;
+            //justify-content: space-between;
             flex-wrap: wrap;
+            @include mq("tablet-wide", max){
+                justify-content: space-around;
+            }
         }
     }
     a{

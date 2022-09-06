@@ -50,8 +50,8 @@ const Sliders = ({data}) => {
                 }
             </div>
             <div className={"btn-container " + 
-                (data.display==="arrows_left_top" ? "top-left" : "" ) + 
-                (data.display==="arrows_left_bottom" ? "bottom-left" : "" ) + 
+                (data.display==="arrows_right_top" ? "top-left" : "" ) + 
+                (data.display==="arrows_right_bottom" ? "bottom-left" : "" ) + 
                 (data.display==="arrows_center_bottom" ? "bottom-center" : "" ) + 
                 (data.display==="arrows_split_center" ? "center-bottom" : "" )  
                 }>

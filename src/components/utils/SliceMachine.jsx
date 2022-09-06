@@ -10,34 +10,33 @@ import FooterModule from "../../components/modules/Footer"
 
 
 const SliceMachine = ({Slices}) => {
-    console.log(Slices[5].internal.type)
     return(
         Slices.map((slice, index) => {
-            switch (slice.internal.type) {
-                case 'SanityHeader':
+            switch (slice._type) {
+                case 'header':
                     return <HeaderModule key={index} data={slice}/>
-                case 'SanityHero':
+                case 'hero':
                     return <HeroModule 
                             data={slice}
                             key={index}
                             />
-                case 'SanitySteps':
+                case 'steps':
                     return <StepsModule 
                             data={slice}
                             key={index}
                             />
-                case 'SanityMedia':
+                case 'Media':
                     return <MediaModule
                             data={slice}
                             key={index}
                             //image={grand_image}
                             />
-                case 'SanitySlider':
+                case 'Slider':
                     return <Sliders 
                             key={index}
                             data={slice}
                             />
-                case "SanityFooter" : 
+                case "footer" : 
                     return <FooterModule key={index} data={slice}/>
                 default:
                     return (<p key={index}>Aucuns composants</p>)

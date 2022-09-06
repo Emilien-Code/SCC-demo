@@ -1,18 +1,17 @@
 import React from "react";
 import "../../assets/styles/modules/hero.scss";
 import defaultImg from "../../assets/images/client-images/Image2.png"
-import SanityImage from "gatsby-plugin-sanity-image"
 import Button from "../atoms/Button"
 const Hero = ({data}) => {
+    console.log(data)
     if(data.display==="img-left" || data.display==="img-right" ){
         return (
             <div className="hero">
                 <div className={"hero-container " + (data.display ==="img-right" ?  "reverse" : "")}>
                     <div className="img-container">
-                        {/* <img src={data.image ? `localhost:3333/data.image._rawAsset._ref` : defaultImg} alt={data.alternativeText}/> */}
-                        <SanityImage 
-                            {...data.image}
-                        />
+                        <picture>
+                            {<img src={data.image.asset.publicUrl ? data.image.asset.publicUrl : defaultImg} alt={data.altText}/>}
+                        </picture>
                     </div>
                     <div className="right">
                         <h1>{data.title}</h1>

@@ -2,13 +2,14 @@
 @import "../utils/mixins.scss";
 
 .step{
-    font-size: map-get($fonts-sizes-desktop , "p-primary" );
-    @include mq("tablet", max) {
-        width: 100%;
-        margin-bottom: 50px;
-    }
-    
+    width: 200px;
     margin-right: 16px;
+    font-size: map-get($fonts-sizes-desktop , "p-primary" );
+    margin-bottom: 50px;
+    // @include mq("tablet", max) {
+    //     width: 100%;
+    // }
+    
     span{
         display: inline-block;
         transition: .15s ease-out;

@@ -7,20 +7,15 @@
     height: 50vh;
     height: map-get($height-section-desktop , "small" );
 
-    @include mq("tablet", max){
-        height: map-get($height-section-mobile, "step" );
-    }
 
-
-    @include mq("tablet", max) {
-        height: 100vh;
-    }
     .step-container{
         display: flex;
-        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
         width: 90%;
-        @include mq("tablet", max) {
-            flex-direction: column;
-        }
+    }
+    
+    @include mq("tablet", max){
+        height: map-get($height-section-mobile, "step" );
     }
 }

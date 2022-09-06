@@ -8,7 +8,7 @@ const Footer = ({data}) => {
         <div className={"footer " + (!data.display ? "inline" : "") + (data.display==="inline" ? "inline" : "") + (data.display==="column" ? "column" : "")}>
             <div className="infos">
                 <div className="infos-container">
-                    <div className="column">
+                    <div className="col">
                         <h1>
                             scc
                         </h1>
@@ -19,7 +19,7 @@ const Footer = ({data}) => {
                             Medium 
                         </p>
                     </div>
-                    <div className="column">
+                    <div className="col">
                         <h1>
                         About
                         </h1>
@@ -30,7 +30,7 @@ const Footer = ({data}) => {
                             Privacy
                         </p>
                     </div>
-                    <div className="column">
+                    <div className="col">
                         <h1>
                         Contact
                         </h1>
