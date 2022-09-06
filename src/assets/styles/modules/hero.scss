@@ -12,10 +12,10 @@
 
     }
     
-    
-    
     .hero-container{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        gap: 20px;
         width: 1200px;
         
 
@@ -31,8 +31,8 @@
 
 
         .img-container{
-            width: 50%;
-            margin-right: 60px;
+            width: calc(100% - 10px);
+
             @include mq("tablet-wide", max) {
                 margin-bottom: 16px;
                 width: 100%;
@@ -49,16 +49,8 @@
     
 
         .right{
-            padding-left:  60px;
-            @include mq("desktop", max) {
-                padding-left:  60px;
-                width: 50%;
-            }
-            @include mq("tablet-wide", max) {
-                padding: 0;
-                width: 100%;
-            }
-            
+            width: calc(100% - 10px);
+            justify-content: space-around;
         }
 
         &.reverse{
@@ -66,23 +58,15 @@
             @include mq("tablet-wide", max) {
                 flex-direction: column;
             }
-            .right{
-                padding: 0 130px 0 0;
 
-                @include mq("tablet-wide", max) {
-                    padding: 0 60px 0 0;
-                }    
-                @include mq("tablet", max) {
-                    padding: 0 0 0 0;
-                }   
-            }
-            .left{
+            .img-container{
                 margin: 0;
             }
         }
     }
 
     p{
+        width: 100%;
         margin-top: 16px;
         @include mq("tablet", max){
             font-size: map-get($fonts-sizes-mobile , "p-primary" );
