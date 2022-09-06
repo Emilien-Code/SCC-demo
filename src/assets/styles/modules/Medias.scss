@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: map-get($min-height-sections, "big");
     height: map-get($height-section-desktop, "media");
 
     @include mq("tablet", max){

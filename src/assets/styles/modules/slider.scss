@@ -4,7 +4,8 @@
 .slider{
     overflow: hidden;
     width: 100vw;
-    height: map-get($height-section-desktop , "small" );
+    min-height: map-get($min-height-sections, "small");
+    height: map-get($height-section-desktop , "small");
 
 
     .slides-container{

@@ -2,11 +2,13 @@
 @import "../utils/mixins.scss";
 
 .hero   {
-    height: map-get($height-section-desktop, "hero" );
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
+    height: map-get($height-section-desktop, "hero" );
+    min-height: map-get($min-height-sections, "small");
+
     @include mq("tablet-wide", max){
         height: map-get($height-section-mobile, "hero" );
 
@@ -68,6 +70,7 @@
     p{
         width: 100%;
         margin-top: 16px;
+
         @include mq("tablet", max){
             font-size: map-get($fonts-sizes-mobile , "p-primary" );
           }
@@ -75,10 +78,12 @@
 
     .secondary{
         font-size: map-get($fonts-sizes-desktop, p-secondary);
+
         @include mq("tablet", max){
             font-size: map-get($fonts-sizes-mobile , "p-secondary" );
           }
     }
+
     .btn-link{
         display: inline-block;
         margin-top: 32px;
@@ -91,13 +96,10 @@
         text-align: center;
         width: 1200px;
         
-
-
         @include mq("desktop", max) {
             width: 90%;
         }
         
-
         .secondary{
             margin-bottom: 95px;
         }
@@ -106,6 +108,4 @@
             width: 350px;
         }
     }
-
-
 }

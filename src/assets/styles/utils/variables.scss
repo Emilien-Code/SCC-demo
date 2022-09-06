@@ -25,9 +25,10 @@ $fonts-sizes-desktop:(
   "p-secondary": 12px,
   "p-secondary-line": 16px,
 );
-
-
-
+$min-height-sections:(
+  "small": 500px,
+  "big": 1000px,
+);
 $fonts-sizes-mobile:(
   "h1": 26px,
   "p-primary": 13px,
