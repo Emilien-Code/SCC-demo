@@ -4,7 +4,6 @@
 .slider{
     overflow: hidden;
     width: 100vw;
-    margin-top: 100px;
     height: map-get($height-section-desktop , "small" );
 
 
@@ -13,8 +12,6 @@
         display: flex;
         left: calc(50% - 109px);
         top: 50%;
-
-
     }
     
     .btn-container{
@@ -36,7 +33,7 @@
         &.bottom-center{
             left: 50%;
             transform: translateX(-50%);
-            bottom: -120px;
+
         }
         &.center-bottom{
             justify-content: space-between;
