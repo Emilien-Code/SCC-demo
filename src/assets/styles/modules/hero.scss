@@ -7,7 +7,8 @@
     align-items: center;
 
     height: map-get($height-section-desktop, "hero" );
-    min-height: map-get($min-height-sections, "small");
+    min-height: map-get($min-height-sections, "small"); 
+
 
     @include mq("tablet-wide", max){
         height: map-get($height-section-mobile, "hero" );
@@ -20,8 +21,9 @@
         gap: 20px;
         width: 1200px;
         
+        
 
-
+        
         @include mq("desktop", max) {
             width: 90%;
         }
@@ -29,6 +31,7 @@
         @include mq("tablet-wide", max) {
             flex-direction: column;
             text-align: center;
+            grid-template-columns: repeat(1, 100%);
         }
 
 
